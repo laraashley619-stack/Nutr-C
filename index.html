@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>nutríC</title><meta name="description" content="nutríC: herramienta de estudio y práctica de nutrición con el SMAE quinta edición, calculadoras, dietas, recetas y más. Sin registro.">
+<meta name="theme-color" content="#8fd9d1"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="nutríC"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="app.css"></head>
+<body><main id="app"><div class="aviso">Cargando nutríC…</div></main><nav class="bar" id="nav"></nav>
+<div id="upd" hidden><span>Hay una versión nueva de nutríC.</span><button id="updb">Actualizar</button></div>
+<noscript><div class="aviso">nutríC necesita JavaScript para funcionar.</div></noscript>
+<script>
+window.__ip=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();window.__ip=e;dispatchEvent(new Event('ip'))});addEventListener('appinstalled',()=>{window.__ip=null});
+if('serviceWorker' in navigator){const had=!!navigator.serviceWorker.controller;let done=0;addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').then(reg=>{const ask=w=>{document.getElementById('upd').hidden=false;document.getElementById('updb').onclick=()=>w.postMessage({type:'SKIP'})};if(reg.waiting&&navigator.serviceWorker.controller)ask(reg.waiting);reg.addEventListener('updatefound',()=>{const w=reg.installing;if(w)w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)ask(w)})})}).catch(()=>{});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(had&&!done){done=1;location.reload()}})})}
+</script>
+<script src="app.js"></script></body></html>

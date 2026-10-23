@@ -1,0 +1,5 @@
+nutríC · cómo publicarla
+1) Sube TODO el contenido de esta carpeta (no la carpeta en sí) a un hosting estático con HTTPS: Netlify (arrastrar y soltar en app.netlify.com/drop), Cloudflare Pages o GitHub Pages.
+2) Abre el enlace que te den. Para instalar: Android (Chrome) menú ⋮ → Instalar aplicación; iPhone (Safari) Compartir → Agregar a pantalla de inicio.
+3) Para publicar una nueva versión: cambia VERSION en sw.js (por ejemplo nutric-1.0.1), sube los archivos y los usuarios verán el aviso «Actualizar».
+Nota: abrir index.html con doble clic (file://) no funciona: la aplicación necesita servirse por https:// o por http://localhost.
